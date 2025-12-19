@@ -3,11 +3,11 @@ const {sequelize} = require('../config/database.js')
 
 
 
-const SocialModel = sequelize.define('social',{
+const SocialModel = sequelize.define('socials',{
     id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    autoIncrement: true,
+    autoIncrement: true, 
   },
   // userID: {
   //   type: DataTypes.INTEGER,

@@ -10,8 +10,7 @@ const UsersFolowedModel = sequelize.define('UsersFolowed',{
     fName : {
         type : DataTypes.STRING,
         allowNull : true
-    },
-
+    }
     
     })
 

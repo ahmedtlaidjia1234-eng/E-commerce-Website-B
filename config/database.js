@@ -35,7 +35,8 @@ const createDatabaseIfNotExists = async () => {
     const res = await client.query(
       "SELECT 1 FROM pg_database WHERE datname = $1",
       [process.env.DB_NAME]
-    );
+    ); 
+    await sequelize.sync({ alter: true });
 
     if (res.rowCount === 0) {
       await client.query(`CREATE DATABASE "${process.env.DB_NAME}"`);

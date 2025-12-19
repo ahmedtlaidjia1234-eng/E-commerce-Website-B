@@ -20,7 +20,12 @@ const MessagesModel = sequelize.define('Messages',{
        type: DataTypes.STRING,
         allowNull : false
     },
-    
+    isRead : {
+       type: DataTypes.BOOLEAN,
+        allowNull : false,
+        defaultValue : false
+    }
+
 
     
     })

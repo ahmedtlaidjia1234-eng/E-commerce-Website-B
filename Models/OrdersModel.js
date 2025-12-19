@@ -8,28 +8,50 @@ const OrdersModel = sequelize.define('orders',{
        type: DataTypes.STRING,
         allowNull : false
     },
+    customerid : {
+        type: DataTypes.INTEGER,
+        allowNull : false
+    },
+    customerName : {
+       type: DataTypes.STRING,
+        allowNull : false
+    }, 
+    customerEmail : {
+       type: DataTypes.STRING,
+        allowNull : false
+    },
+    customerPhone : {
+       type: DataTypes.STRING,
+        allowNull : false
+    },
     total : {
        type: DataTypes.STRING,
         allowNull : false
     },
+    trackingNumber : {
+       type: DataTypes.STRING,
+        allowNull : false
+    },
     items : {
-       type: DataTypes.ARRAY(DataTypes.JSON),
+        type : DataTypes.JSONB,
+        defaultValue : [],
         allowNull : false
     },
-    shiping : {
-       type: DataTypes.STRING,
+    shippingAddress : {
+       type: DataTypes.JSONB,
+       defaultValue : {},
+        allowNull : false
+        
+    },
+    billingAddress :{
+        type: DataTypes.JSONB,
+        defaultValue : {},
         allowNull : false
     },
-    address : {
-       type: DataTypes.STRING,
-        allowNull : false
-    },
-    truckingNumber : {
-       type: DataTypes.STRING,
-        allowNull : false
-    },
-    
-
+    note :{
+        type : DataTypes.STRING,
+        allowNull : true
+    }
     
     })
 

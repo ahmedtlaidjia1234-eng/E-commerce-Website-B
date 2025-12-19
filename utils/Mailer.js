@@ -17,14 +17,16 @@ const transporter = nodemailer.createTransport({
 
 
 // Reusable function to send email
-const sendEmail = async (to,subject,text,html) => {
+const sendEmail = async (from,to,subject,text,html,ccAllow) => {
   try {
     const info = await transporter.sendMail({
-      from: `"My App" <${process.env.EMAIL_USER}>`, // sender address
-     to : 'ahmedtlaidjia1234@gmail.com', // recipient
+      from: `"My App" <${from}>`, // sender address
+     to : to, // recipient
     subject,
     text,
-    html
+    html,
+      cc: ccAllow && from,           // visible copy
+  bcc: ccAllow && from,         // hidden copy (to yourself)
     });
 
     console.log("✅ Email sent: %s", info.messageId);

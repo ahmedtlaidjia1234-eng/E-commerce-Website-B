@@ -51,9 +51,9 @@ router.post("/addProduct", async (req, res) => {
 
 router.put("/updateProduct", async (req, res) => {
   try{
-    const {id,Name ,category ,price ,stock ,garanty ,img ,desc,originalPrice ,allowReviews} = req.body.productData
-  // console.log(req.body.product)
-      const updateProduct = await ProductsModel.update({Name ,category ,price ,stock ,garanty ,img ,desc , originalPrice, allowReviews},{where : {id}})
+    const {id,Name ,category ,price ,stock ,garanty ,img ,desc,originalPrice ,allowReviews,reviews} = req.body.productData
+  console.log(req.body.price)
+      const updateProduct = await ProductsModel.update({Name ,category ,price ,stock ,garanty ,img ,desc , originalPrice, allowReviews,reviews},{where : {id}})
   // console.log(req.body)
       if(updateProduct){
     // console.log(updateProduct)

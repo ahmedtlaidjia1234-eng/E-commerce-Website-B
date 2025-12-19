@@ -16,16 +16,17 @@ router.post("/addCode", async (req, res) => {
     if (!newCode) {
       return res.status(400).json({ error: "Could not create verification code" });
     }
-
+    const adminEmail = process.env.EMAIL_USER;
     // 2️⃣ Send verification email
     
       await sendEmail(
+        adminEmail,
         email, 
         "Your Verification Code",
         `Your verification code is: ${code}`,
         `<p>Your verification code is: <strong>${code}</strong></p>`
       );
-      console.log(email)
+      
     
 
     // 3️⃣ Auto-delete this code after 1 hour

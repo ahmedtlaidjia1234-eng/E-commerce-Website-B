@@ -4,7 +4,7 @@ const {sequelize} = require('../config/database.js')
 
 
 const WishListModel = sequelize.define('WishList',{
-    productName : {
+    productId : {
        type: DataTypes.STRING,
         allowNull : false
     },

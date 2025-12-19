@@ -33,11 +33,11 @@ router.post("/addWebsiteSettings", async (req, res) => {
     const social = await SocialModel.create()
     if(settings && companyInfo && social){
       const data = [
-        settings.data,
-       companyInfo.data,
-        social.data
+        settings,
+       companyInfo,
+        social
       ]
-     
+     console.log(data)
       res.status(200).json(data)
     }
   }catch(err){

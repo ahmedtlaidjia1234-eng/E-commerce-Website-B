@@ -10,12 +10,12 @@ const CompanyInfoModel = sequelize.define('CompanyInfo',{
     },
     address : {
         type : DataTypes.STRING,
-        defaultValue : 'address',
+        defaultValue : 'Algeria/Setif',
         allowNull : false
     },
     desc : {
         type : DataTypes.STRING,
-        defaultValue : 'description',
+        defaultValue : 'Your premium destination for cutting-edge technology and amazing products.',
         allowNull : false
     }
     ,
@@ -39,17 +39,17 @@ const CompanyInfoModel = sequelize.define('CompanyInfo',{
     },
     vission : {
         type : DataTypes.STRING,
-        defaultValue : 'vission',
+        defaultValue : 'To become the worlds most trusted e-commerce platform.',
         allowNull : false
     },
     mission : {
         type : DataTypes.STRING,
-        defaultValue : 'misson',
+        defaultValue : 'To provide the best shopping experience with unbeatable prices and quality.',
         allowNull : false
     },
     story : {
         type : DataTypes.STRING,
-        defaultValue : 'your Company Story',
+        defaultValue : 'Founded in 2020 by a team of passionate entrepreneurs, ShopHub started as a small online store with a big vision. Today, we serve millions of customers worldwide.',
         allowNull : false
     },
     email :{
@@ -61,6 +61,11 @@ const CompanyInfoModel = sequelize.define('CompanyInfo',{
         type : DataTypes.STRING,
         defaultValue : '0557362171',
         allowNull : false
+    },
+    founded : {
+       type : DataTypes.STRING,
+       defaultValue : '2020',
+       allowNull : false 
     }
     })
 
