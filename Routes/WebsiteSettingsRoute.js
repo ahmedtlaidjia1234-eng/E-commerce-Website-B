@@ -13,8 +13,8 @@ router.get("/getWebsiteSettings", async (req, res) => {
       // console.log(social[0].dataValues)
       
       const data = {
-        settings : settings[0].dataValues || {},
-       companyInfo : companyInfo[0].dataValues || {},
+        settings : settings[0]?.dataValues || {},
+       companyInfo : companyInfo[0]?.dataValues || {},
         socialMedia : social
       }
       res.status(200).json(data)
